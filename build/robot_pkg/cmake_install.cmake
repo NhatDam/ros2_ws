@@ -1,8 +1,8 @@
-# Install script for directory: /home/tom/ros2_ws/src/robot_pkg
+# Install script for directory: /home/qnhat/AGV_ws/ros2_ws/src/robot_pkg
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/tom/ros2_ws/install/robot_pkg")
+  set(CMAKE_INSTALL_PREFIX "/home/qnhat/AGV_ws/ros2_ws/install/robot_pkg")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -44,25 +44,26 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_pkg" TYPE DIRECTORY FILES
-    "/home/tom/ros2_ws/src/robot_pkg/config"
-    "/home/tom/ros2_ws/src/robot_pkg/launch"
-    "/home/tom/ros2_ws/src/robot_pkg/maps"
-    "/home/tom/ros2_ws/src/robot_pkg/meshes"
-    "/home/tom/ros2_ws/src/robot_pkg/models"
-    "/home/tom/ros2_ws/src/robot_pkg/params"
-    "/home/tom/ros2_ws/src/robot_pkg/rviz"
-    "/home/tom/ros2_ws/src/robot_pkg/src"
-    "/home/tom/ros2_ws/src/robot_pkg/urdf"
-    "/home/tom/ros2_ws/src/robot_pkg/worlds"
+    "/home/qnhat/AGV_ws/ros2_ws/src/robot_pkg/config"
+    "/home/qnhat/AGV_ws/ros2_ws/src/robot_pkg/launch"
+    "/home/qnhat/AGV_ws/ros2_ws/src/robot_pkg/maps"
+    "/home/qnhat/AGV_ws/ros2_ws/src/robot_pkg/meshes"
+    "/home/qnhat/AGV_ws/ros2_ws/src/robot_pkg/models"
+    "/home/qnhat/AGV_ws/ros2_ws/src/robot_pkg/params"
+    "/home/qnhat/AGV_ws/ros2_ws/src/robot_pkg/rviz"
+    "/home/qnhat/AGV_ws/ros2_ws/src/robot_pkg/src"
+    "/home/qnhat/AGV_ws/ros2_ws/src/robot_pkg/urdf"
+    "/home/qnhat/AGV_ws/ros2_ws/src/robot_pkg/worlds"
+    "/home/qnhat/AGV_ws/ros2_ws/src/robot_pkg/include"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/tom/ros2_ws/build/robot_pkg/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/robot_pkg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/qnhat/AGV_ws/ros2_ws/build/robot_pkg/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/robot_pkg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/tom/ros2_ws/build/robot_pkg/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/robot_pkg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/qnhat/AGV_ws/ros2_ws/build/robot_pkg/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/robot_pkg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -70,7 +71,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_pkg/environment" TYPE FILE FILES "/home/tom/ros2_ws/build/robot_pkg/ament_cmake_environment_hooks/ament_prefix_path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_pkg/environment" TYPE FILE FILES "/home/qnhat/AGV_ws/ros2_ws/build/robot_pkg/ament_cmake_environment_hooks/ament_prefix_path.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -78,42 +79,42 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_pkg/environment" TYPE FILE FILES "/home/tom/ros2_ws/build/robot_pkg/ament_cmake_environment_hooks/path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_pkg/environment" TYPE FILE FILES "/home/qnhat/AGV_ws/ros2_ws/build/robot_pkg/ament_cmake_environment_hooks/path.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_pkg" TYPE FILE FILES "/home/tom/ros2_ws/build/robot_pkg/ament_cmake_environment_hooks/local_setup.bash")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_pkg" TYPE FILE FILES "/home/qnhat/AGV_ws/ros2_ws/build/robot_pkg/ament_cmake_environment_hooks/local_setup.bash")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_pkg" TYPE FILE FILES "/home/tom/ros2_ws/build/robot_pkg/ament_cmake_environment_hooks/local_setup.sh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_pkg" TYPE FILE FILES "/home/qnhat/AGV_ws/ros2_ws/build/robot_pkg/ament_cmake_environment_hooks/local_setup.sh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_pkg" TYPE FILE FILES "/home/tom/ros2_ws/build/robot_pkg/ament_cmake_environment_hooks/local_setup.zsh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_pkg" TYPE FILE FILES "/home/qnhat/AGV_ws/ros2_ws/build/robot_pkg/ament_cmake_environment_hooks/local_setup.zsh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_pkg" TYPE FILE FILES "/home/tom/ros2_ws/build/robot_pkg/ament_cmake_environment_hooks/local_setup.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_pkg" TYPE FILE FILES "/home/qnhat/AGV_ws/ros2_ws/build/robot_pkg/ament_cmake_environment_hooks/local_setup.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_pkg" TYPE FILE FILES "/home/tom/ros2_ws/build/robot_pkg/ament_cmake_environment_hooks/package.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_pkg" TYPE FILE FILES "/home/qnhat/AGV_ws/ros2_ws/build/robot_pkg/ament_cmake_environment_hooks/package.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/tom/ros2_ws/build/robot_pkg/ament_cmake_index/share/ament_index/resource_index/packages/robot_pkg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/qnhat/AGV_ws/ros2_ws/build/robot_pkg/ament_cmake_index/share/ament_index/resource_index/packages/robot_pkg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_pkg/cmake" TYPE FILE FILES
-    "/home/tom/ros2_ws/build/robot_pkg/ament_cmake_core/robot_pkgConfig.cmake"
-    "/home/tom/ros2_ws/build/robot_pkg/ament_cmake_core/robot_pkgConfig-version.cmake"
+    "/home/qnhat/AGV_ws/ros2_ws/build/robot_pkg/ament_cmake_core/robot_pkgConfig.cmake"
+    "/home/qnhat/AGV_ws/ros2_ws/build/robot_pkg/ament_cmake_core/robot_pkgConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_pkg" TYPE FILE FILES "/home/tom/ros2_ws/src/robot_pkg/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_pkg" TYPE FILE FILES "/home/qnhat/AGV_ws/ros2_ws/src/robot_pkg/package.xml")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -124,5 +125,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/tom/ros2_ws/build/robot_pkg/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/qnhat/AGV_ws/ros2_ws/build/robot_pkg/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

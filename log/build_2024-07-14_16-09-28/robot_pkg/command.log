@@ -1,4 +1,0 @@
-Invoking command in '/home/tom/ros2_ws/build/robot_pkg': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/tom/ros2_ws/build/robot_pkg -- -j2 -l2
-Invoked command in '/home/tom/ros2_ws/build/robot_pkg' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/tom/ros2_ws/build/robot_pkg -- -j2 -l2
-Invoking command in '/home/tom/ros2_ws/build/robot_pkg': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/tom/ros2_ws/build/robot_pkg
-Invoked command in '/home/tom/ros2_ws/build/robot_pkg' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/tom/ros2_ws/build/robot_pkg
