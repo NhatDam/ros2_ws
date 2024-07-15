@@ -1,0 +1,46 @@
+[0.014s] Invoking command in '/home/tom/ros2_ws/build/robot_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/tom/ros2_ws/install/launch_testing_examples:/home/tom/ros2_ws/install/examples_rclpy_pointcloud_publisher:/home/tom/ros2_ws/install/examples_rclpy_minimal_subscriber:/home/tom/ros2_ws/install/examples_rclpy_minimal_service:/home/tom/ros2_ws/install/examples_rclpy_minimal_publisher:/home/tom/ros2_ws/install/examples_rclpy_minimal_client:/home/tom/ros2_ws/install/examples_rclpy_minimal_action_server:/home/tom/ros2_ws/install/examples_rclpy_minimal_action_client:/home/tom/ros2_ws/install/examples_rclpy_guard_conditions:/home/tom/ros2_ws/install/examples_rclpy_executors:/opt/ros/humble /usr/bin/cmake --build /home/tom/ros2_ws/build/robot_pkg -- -j2 -l2
+[0.061s] Invoked command in '/home/tom/ros2_ws/build/robot_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/tom/ros2_ws/install/launch_testing_examples:/home/tom/ros2_ws/install/examples_rclpy_pointcloud_publisher:/home/tom/ros2_ws/install/examples_rclpy_minimal_subscriber:/home/tom/ros2_ws/install/examples_rclpy_minimal_service:/home/tom/ros2_ws/install/examples_rclpy_minimal_publisher:/home/tom/ros2_ws/install/examples_rclpy_minimal_client:/home/tom/ros2_ws/install/examples_rclpy_minimal_action_server:/home/tom/ros2_ws/install/examples_rclpy_minimal_action_client:/home/tom/ros2_ws/install/examples_rclpy_guard_conditions:/home/tom/ros2_ws/install/examples_rclpy_executors:/opt/ros/humble /usr/bin/cmake --build /home/tom/ros2_ws/build/robot_pkg -- -j2 -l2
+[0.104s] Invoking command in '/home/tom/ros2_ws/build/robot_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/tom/ros2_ws/install/launch_testing_examples:/home/tom/ros2_ws/install/examples_rclpy_pointcloud_publisher:/home/tom/ros2_ws/install/examples_rclpy_minimal_subscriber:/home/tom/ros2_ws/install/examples_rclpy_minimal_service:/home/tom/ros2_ws/install/examples_rclpy_minimal_publisher:/home/tom/ros2_ws/install/examples_rclpy_minimal_client:/home/tom/ros2_ws/install/examples_rclpy_minimal_action_server:/home/tom/ros2_ws/install/examples_rclpy_minimal_action_client:/home/tom/ros2_ws/install/examples_rclpy_guard_conditions:/home/tom/ros2_ws/install/examples_rclpy_executors:/opt/ros/humble /usr/bin/cmake --install /home/tom/ros2_ws/build/robot_pkg
+[0.119s] -- Install configuration: ""
+[0.120s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/config
+[0.120s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/config/joint_names_Model.yaml
+[0.120s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/launch
+[0.120s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/launch/robot.launch.py
+[0.121s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/maps
+[0.121s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/meshes
+[0.121s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/meshes/Left_wheel.STL
+[0.121s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/meshes/base_link.STL
+[0.121s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/meshes/FL_Caster.STL
+[0.121s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/meshes/caster_collision.STL
+[0.121s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/meshes/wheel_collision.STL
+[0.121s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/meshes/Right_wheel.STL
+[0.121s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/meshes/RR_Caster.STL
+[0.121s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/meshes/FR_Caster.STL
+[0.121s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/meshes/RL_Caster.STL
+[0.122s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/meshes/base_link_collision.STL
+[0.122s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/models
+[0.122s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/params
+[0.122s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/rviz
+[0.122s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/rviz/rviz_basic_settings.rviz
+[0.122s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/src
+[0.122s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/urdf
+[0.122s] -- Installing: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/urdf/Model.urdf
+[0.122s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/urdf/Model.csv
+[0.122s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/worlds
+[0.122s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/worlds/empty.world
+[0.122s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/ament_index/resource_index/package_run_dependencies/robot_pkg
+[0.122s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/ament_index/resource_index/parent_prefix_path/robot_pkg
+[0.122s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/environment/ament_prefix_path.sh
+[0.122s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/environment/ament_prefix_path.dsv
+[0.123s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/environment/path.sh
+[0.123s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/environment/path.dsv
+[0.123s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/local_setup.bash
+[0.123s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/local_setup.sh
+[0.123s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/local_setup.zsh
+[0.123s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/local_setup.dsv
+[0.124s] -- Installing: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/package.dsv
+[0.124s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/ament_index/resource_index/packages/robot_pkg
+[0.124s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/cmake/robot_pkgConfig.cmake
+[0.124s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/cmake/robot_pkgConfig-version.cmake
+[0.124s] -- Up-to-date: /home/tom/ros2_ws/install/robot_pkg/share/robot_pkg/package.xml
+[0.130s] Invoked command in '/home/tom/ros2_ws/build/robot_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/tom/ros2_ws/install/launch_testing_examples:/home/tom/ros2_ws/install/examples_rclpy_pointcloud_publisher:/home/tom/ros2_ws/install/examples_rclpy_minimal_subscriber:/home/tom/ros2_ws/install/examples_rclpy_minimal_service:/home/tom/ros2_ws/install/examples_rclpy_minimal_publisher:/home/tom/ros2_ws/install/examples_rclpy_minimal_client:/home/tom/ros2_ws/install/examples_rclpy_minimal_action_server:/home/tom/ros2_ws/install/examples_rclpy_minimal_action_client:/home/tom/ros2_ws/install/examples_rclpy_guard_conditions:/home/tom/ros2_ws/install/examples_rclpy_executors:/opt/ros/humble /usr/bin/cmake --install /home/tom/ros2_ws/build/robot_pkg

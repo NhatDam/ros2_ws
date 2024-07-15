@@ -1,0 +1,215 @@
+<robot name="AGV">
+  <link name="dummy_link" xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- ****************** ROBOT CONSTANTS *******************************  -->
+  <!-- Position the wheels along the x-axis -->
+  <xacro:property name="wheel_xoff" value="0.075"/>
+
+  <!-- Position the caster wheel (visual) along the x-axis --> 
+  <xacro:property name="caster_xoff" value="0.08963"/>
+
+  <!-- Position the caster wheel (collision) along the x-axis -->
+  <xacro:property name="caster_collision_xoff" value="-0.075"/>
+  
+  <!-- ****************** GROUND ***************************  -->
+  </link>
+  <joint name="fixed_dummy_base" type="fixed">
+    <parent link="dummy_link"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0.0356231641912014 0.116102496743018 9.80500928933761E-08" rpy="1.5707963267949 0 0" />
+      <mass value="14.2430877452663" />
+      <inertia ixx="0.490511050948444" ixy="-0.0515090377060454" ixz="4.23720756747739E-08" iyy="1.36650045731287" iyz="1.9746618765378E-09" izz="0.971942301144948" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.045" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot_pkg/meshes/base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.894117647058823 0.913725490196078 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz ="0 0 0.045" rpy = "0 0 3.141592654" />
+      <geometry>
+        <mesh filename="package://robot_pkg/meshes/base_link_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="base_link">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <!-- Righ_wheel -->
+  <link name="Right_wheel">
+    <inertial>
+      <origin xyz="0 0.0225 1.0578E-05" rpy="0 0 0" />
+      <mass value="0.49011" />
+      <inertia ixx="0.00083492" ixy="1.158E-24" ixz="-1.2989E-24" iyy="0.001562" iyz="-6.0756E-20" izz="0.00083497" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="3.141592654 0 0" />
+      <geometry>
+        <mesh filename="package://robot_pkg/meshes/Right_wheel.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="-1.5707963267949 0 0" />
+      <geometry>
+        <mesh filename="package://robot_pkg/meshes/wheel_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RWheel_joint" type="continuous">
+    <origin xyz="0 -0.2215 ${wheel_xoff}" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="Right_wheel" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <!-- Left_wheel -->
+  <link name="Left_wheel">
+    <inertial>
+      <origin xyz="-6.9389E-18 0.0225 1.0578E-05" rpy="0 0 0" />
+      <mass value="0.49011" />
+      <inertia ixx="0.00083492" ixy="-1.0588E-23" ixz="-1.7579E-23" iyy="0.001562" iyz="5.7749E-20" izz="0.00083497" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="3.141592654 0 0" />
+      <geometry>
+        <mesh filename="package://robot_pkg/meshes/Left_wheel.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="-1.5707963267949 0 0" />
+      <geometry>
+        <mesh filename="package://robot_pkg/meshes/wheel_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="LWheel_joint" type="continuous">
+    <origin xyz="0 0.2665 ${wheel_xoff}" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="Left_wheel" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="FR_Caster">
+    <inertial>
+      <origin xyz="-0.0033782 -0.032481 -1.3245E-09" rpy="0 0 0" />
+      <mass value="0.18385" />
+      <inertia ixx="0.00019043" ixy="-1.8987E-05" ixz="1.2958E-12" iyy="0.00013092" iyz="-2.3136E-12" izz="0.00021915" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963267949 0 0" />
+      <geometry>
+        <mesh filename="package://robot_pkg/meshes/FR_Caster.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 ${caster_collision_xoff}" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot_pkg/meshes/caster_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="FRC_joint" type="fixed">
+    <origin xyz="0.32 -0.1975 0.07" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="FR_Caster" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="FL_Caster">
+    <inertial>
+      <origin xyz="-0.0033782 -0.032481 -1.3245E-09" rpy="1.5707963267949 0 0" />
+      <mass value="0.18385" />
+      <inertia ixx="0.00019043" ixy="-1.8987E-05" ixz="1.2958E-12" iyy="0.00013092" iyz="-2.3136E-12" izz="0.00021915" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963267949 0 0" />
+      <geometry>
+        <mesh filename="package://robot_pkg/meshes/FL_Caster.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 ${caster_collision_xoff}" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot_pkg/meshes/caster_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="FLC_joint" type="fixed">
+    <origin xyz="0.32 0.1975 0.07" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="FL_Caster" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="RR_Caster">
+    <inertial>
+      <origin xyz="-0.0033782 -0.032481 -1.3245E-09" rpy="0 0 0" />
+      <mass value="0.18385" />
+      <inertia ixx="0.00019043" ixy="-1.8987E-05" ixz="1.2958E-12" iyy="0.00013092" iyz="-2.3136E-12" izz="0.00021915" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963267949 0 0" />
+      <geometry>
+        <mesh filename="package://robot_pkg/meshes/RR_Caster.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 ${caster_collision_xoff}" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot_pkg/meshes/caster_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RRC_joint" type="fixed">
+    <origin xyz="-0.32 -0.1975 0.07" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="RR_Caster" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="RL_Caster">
+    <inertial>
+      <origin xyz="-0.0033782 -0.032481 -1.3245E-09" rpy="0 0 0" />
+      <mass value="0.18385" />
+      <inertia ixx="0.00019043" ixy="-1.8987E-05" ixz="1.2958E-12" iyy="0.00013092" iyz="-2.3136E-12" izz="0.00021915" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963267949 0 0" />
+      <geometry>
+        <mesh filename="package://robot_pkg/meshes/RL_Caster.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 ${caster_collision_xoff}" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot_pkg/meshes/caster_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RLC_joint" type="fixed">
+    <origin xyz="-0.32 0.1975 0.07" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="RL_Caster" />
+    <axis xyz="0 0 0" />
+  </joint>
+</robot>
