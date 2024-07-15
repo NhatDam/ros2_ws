@@ -1,5 +1,5 @@
-<robot name="AGV">
-  <link name="dummy_link" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="AGV" xmlns:xacro="http://ros.org/wiki/xacro">
+  <link name="dummy_link">
   <!-- ****************** ROBOT CONSTANTS *******************************  -->
   <!-- Position the wheels along the x-axis -->
   <xacro:property name="wheel_xoff" value="0.075"/>
