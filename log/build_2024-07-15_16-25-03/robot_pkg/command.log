@@ -1,4 +1,0 @@
-Invoking command in '/home/qnhat/AGV_ws/build/robot_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/qnhat/AGV_ws/build/robot_pkg -- -j4 -l4
-Invoked command in '/home/qnhat/AGV_ws/build/robot_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/qnhat/AGV_ws/build/robot_pkg -- -j4 -l4
-Invoking command in '/home/qnhat/AGV_ws/build/robot_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/qnhat/AGV_ws/build/robot_pkg
-Invoked command in '/home/qnhat/AGV_ws/build/robot_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/qnhat/AGV_ws/build/robot_pkg
