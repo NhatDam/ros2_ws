@@ -4,18 +4,21 @@
   <name>robot_pkg</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="damtaminhnhat@gmail.com">tom</maintainer>
+  <maintainer email="qnhat@todo.todo">qnhat</maintainer>
   <license>TODO: License declaration</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
+  
+  <exec_depend>joint_state_publisher</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>rviz</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>xacro</exec_depend>
+  <exec_depend>ros_gz_bridge</exec_depend>
+
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
-  <depend>joint_state_publisher</depend>
-  <depend>robot_state_publisher</depend>
-  <depend>rviz</depend>
-  <depend>gazebo</depend>
-  <depend>xacro</depend>
 
   <export>
     <build_type>ament_cmake</build_type>

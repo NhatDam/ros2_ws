@@ -1,6 +1,9 @@
-<robot name="AGV" xmlns:xacro="http://ros.org/wiki/xacro">
-  <link name="dummy_link">
-  <!-- ****************** ROBOT CONSTANTS *******************************  -->
+<?xml version="1.0"?>
+<robot name="AGV" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  
+  <!-- ######################################################################### -->
+	<!--                  ROBOT PARAMETERS        -->
+	<!-- ######################################################################### -->
   <!-- Position the wheels along the x-axis -->
   <xacro:property name="wheel_xoff" value="0.075"/>
 
@@ -9,14 +12,38 @@
 
   <!-- Position the caster wheel (collision) along the x-axis -->
   <xacro:property name="caster_collision_xoff" value="-0.075"/>
-  
-  <!-- ****************** GROUND ***************************  -->
+
+  <xacro:property name="wheel_dia" value="0.15"/>
+  <xacro:property name="wheel_separate" value="0.48826"/>
+
+
+  <xacro:include filename="$(find robot_pkg)/urdf/robot_controller.xacro" />
+
+
+
+  <!-- ######################################################################### -->
+	<!--                 START: GROUND         -->
+	<!-- ######################################################################### -->
+
+  <link name="dummy_link">
   </link>
   <joint name="fixed_dummy_base" type="fixed">
     <parent link="dummy_link"/>
     <child link="base_link"/>
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </joint>
+
+  <!-- ######################################################################### -->
+	<!--                 END: GROUND         -->
+	<!-- ######################################################################### -->
+
+
+
+
+  <!-- ######################################################################### -->
+	<!--                 START: Base       -->
+	<!-- ######################################################################### -->
+
   <link name="base_link">
     <inertial>
       <origin xyz="0.0356231641912014 0.116102496743018 9.80500928933761E-08" rpy="1.5707963267949 0 0" />
@@ -28,9 +55,9 @@
       <geometry>
         <mesh filename="package://robot_pkg/meshes/base_link.STL" />
       </geometry>
-      <material name="">
+      <!-- <material name="">
         <color rgba="0.894117647058823 0.913725490196078 0.929411764705882 1" />
-      </material>
+      </material> -->
     </visual>
     <collision>
       <origin xyz ="0 0 0.045" rpy = "0 0 3.141592654" />
@@ -39,10 +66,19 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="base_link">
-    <material>Gazebo/Red</material>
-  </gazebo>
-  <!-- Righ_wheel -->
+  
+
+  <!-- ######################################################################### -->
+	<!--                 END: Base         -->
+	<!-- ######################################################################### -->
+
+
+
+
+ <!-- ######################################################################### -->
+ <!--                 START: Right wheel          -->
+ <!-- ######################################################################### -->
+
   <link name="Right_wheel">
     <inertial>
       <origin xyz="0 0.0225 1.0578E-05" rpy="0 0 0" />
@@ -54,9 +90,9 @@
       <geometry>
         <mesh filename="package://robot_pkg/meshes/Right_wheel.STL" />
       </geometry>
-      <material name="">
+      <!-- <material name="">
         <color rgba="0.79216 0.81961 0.93333 1" />
-      </material>
+      </material> -->
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="-1.5707963267949 0 0" />
@@ -65,13 +101,28 @@
       </geometry>
     </collision>
   </link>
+
   <joint name="RWheel_joint" type="continuous">
     <origin xyz="0 -0.2215 ${wheel_xoff}" rpy="0 0 0" />
     <parent link="base_link" />
     <child link="Right_wheel" />
     <axis xyz="0 1 0" />
+    <limit effort="1000" velocity="1000" />
+	  <dynamics damping="1.0" friction="1.0"/>
   </joint>
-  <!-- Left_wheel -->
+
+	<!-- ######################################################################### -->
+	<!--                 END: Right wheel          -->
+	<!-- ######################################################################### -->
+
+
+
+
+  
+	<!-- ######################################################################### -->
+	<!--                 START: Left wheel         -->
+	<!-- ######################################################################### -->
+
   <link name="Left_wheel">
     <inertial>
       <origin xyz="-6.9389E-18 0.0225 1.0578E-05" rpy="0 0 0" />
@@ -83,9 +134,9 @@
       <geometry>
         <mesh filename="package://robot_pkg/meshes/Left_wheel.STL" />
       </geometry>
-      <material name="">
+      <!-- <material name="">
         <color rgba="0.79216 0.81961 0.93333 1" />
-      </material>
+      </material> -->
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="-1.5707963267949 0 0" />
@@ -94,12 +145,27 @@
       </geometry>
     </collision>
   </link>
+
   <joint name="LWheel_joint" type="continuous">
     <origin xyz="0 0.2665 ${wheel_xoff}" rpy="0 0 0" />
     <parent link="base_link" />
     <child link="Left_wheel" />
     <axis xyz="0 1 0" />
+    <limit effort="1000" velocity="1000" />
+	  <dynamics damping="1.0" friction="1.0"/>
   </joint>
+
+	<!-- ######################################################################### -->
+	<!--                 END: Caster wheel          -->
+	<!-- ######################################################################### -->
+
+
+
+
+
+	<!-- ######################################################################### -->
+	<!--                 START: Caster wheel          -->
+	<!-- ######################################################################### -->
   <link name="FR_Caster">
     <inertial>
       <origin xyz="-0.0033782 -0.032481 -1.3245E-09" rpy="0 0 0" />
@@ -122,12 +188,17 @@
       </geometry>
     </collision>
   </link>
+
   <joint name="FRC_joint" type="fixed">
     <origin xyz="0.32 -0.1975 0.07" rpy="0 0 0" />
     <parent link="base_link" />
     <child link="FR_Caster" />
     <axis xyz="0 0 0" />
   </joint>
+<!--######################################################################### -->
+<!-- ######################################################################### -->	         
+<!-- #########################################################################-->
+
   <link name="FL_Caster">
     <inertial>
       <origin xyz="-0.0033782 -0.032481 -1.3245E-09" rpy="1.5707963267949 0 0" />
@@ -150,12 +221,17 @@
       </geometry>
     </collision>
   </link>
+
   <joint name="FLC_joint" type="fixed">
     <origin xyz="0.32 0.1975 0.07" rpy="0 0 0" />
     <parent link="base_link" />
     <child link="FL_Caster" />
     <axis xyz="0 0 0" />
   </joint>
+<!--######################################################################### -->
+<!-- ######################################################################### -->	         
+<!-- #########################################################################-->
+
   <link name="RR_Caster">
     <inertial>
       <origin xyz="-0.0033782 -0.032481 -1.3245E-09" rpy="0 0 0" />
@@ -178,12 +254,18 @@
       </geometry>
     </collision>
   </link>
+
   <joint name="RRC_joint" type="fixed">
     <origin xyz="-0.32 -0.1975 0.07" rpy="0 0 0" />
     <parent link="base_link" />
     <child link="RR_Caster" />
     <axis xyz="0 0 0" />
   </joint>
+
+<!--######################################################################### -->
+<!-- ######################################################################### -->	         
+<!-- #########################################################################-->
+
   <link name="RL_Caster">
     <inertial>
       <origin xyz="-0.0033782 -0.032481 -1.3245E-09" rpy="0 0 0" />
@@ -206,10 +288,15 @@
       </geometry>
     </collision>
   </link>
+
   <joint name="RLC_joint" type="fixed">
     <origin xyz="-0.32 0.1975 0.07" rpy="0 0 0" />
     <parent link="base_link" />
     <child link="RL_Caster" />
     <axis xyz="0 0 0" />
   </joint>
+<!-- ######################################################################### -->
+<!--                 END: Caster wheel          -->
+<!-- ######################################################################### -->
+
 </robot>
