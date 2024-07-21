@@ -7,40 +7,40 @@
 	</gazebo>
 
 	<gazebo reference="Right_wheel">
-		<mu1>1</mu1>
-		<mu2>1</mu2>
+		<mu1>100</mu1>
+		<mu2>100</mu2>
 		<material>Gazebo/Yellow</material>
 	</gazebo>
 
 	<gazebo reference="Left_wheel">
-		<mu1>1</mu1>
-		<mu2>1</mu2>
+		<mu1>100</mu1>
+		<mu2>100</mu2>
 		<material>Gazebo/Yellow</material>
 	</gazebo>
 
-	<!-- <gazebo reference="FR_Caster">
-		<mu1>0.001</mu1>
-		<mu2>0.001</mu2>
+	<gazebo reference="FR_Caster">
+		<mu1>0.00001</mu1>
+		<mu2>0.00001</mu2>
 		<material>Gazebo/Red</material>
 	</gazebo>
 
 	<gazebo reference="FL_Caster">
-		<mu1>0.001</mu1>
-		<mu2>0.001</mu2>
+		<mu1>0.00001</mu1>
+		<mu2>0.00001</mu2>
 		<material>Gazebo/Red</material>
 	</gazebo>
 
 	<gazebo reference="RR_Caster">
-		<mu1>0.001</mu1>
-		<mu2>0.001</mu2>
+		<mu1>0.00001</mu1>
+		<mu2>0.00001</mu2>
 		<material>Gazebo/Red</material>
 	</gazebo>
 
 	<gazebo reference="RL_Caster">
-		<mu1>0.001</mu1>
-		<mu2>0.001</mu2>
+		<mu1>0.00001</mu1>
+		<mu2>0.00001</mu2>
 		<material>Gazebo/Red</material>
-	</gazebo> -->
+	</gazebo>
 
 
 
@@ -60,12 +60,12 @@
 	    		<right_joint>RWheel_joint</right_joint>
 	
 	    		<!-- Kinematics -->
-	    		<wheel_separation>wheel_separate</wheel_separation>
-	    		<wheel_diameter>wheel_dia</wheel_diameter>
+	    		<wheel_separation>${wheel_separate}</wheel_separation>
+	    		<wheel_diameter>${wheel_dia}</wheel_diameter>
 
 	    		<!-- limits -->
-	    		<max_wheel_torque>10000</max_wheel_torque>
-	    		<max_wheel_acceleration>7.0</max_wheel_acceleration>
+	    		<max_wheel_torque>20000</max_wheel_torque>
+	    		<max_wheel_acceleration>100</max_wheel_acceleration>
 
 	    		<!-- output -->
 	    		<publish_odom>true</publish_odom>
