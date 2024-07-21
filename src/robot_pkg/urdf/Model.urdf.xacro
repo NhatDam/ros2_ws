@@ -11,7 +11,7 @@
   <xacro:property name="caster_xoff" value="0.08963"/>
 
   <!-- Position the caster wheel (collision) along the x-axis -->
-  <xacro:property name="caster_collision_xoff" value="-0.075"/>
+  <xacro:property name="caster_collision_xoff" value="0.08963"/>
 
   <xacro:property name="wheel_dia" value="0.15"/>
   <xacro:property name="wheel_separate" value="0.48826"/>
@@ -60,9 +60,9 @@
       </material> -->
     </visual>
     <collision>
-      <origin xyz ="0 0 0.045" rpy = "0 0 3.141592654" />
+      <origin xyz ="0 0 0.045" rpy = "0 0 0" />
       <geometry>
-        <mesh filename="$(find robot_pkg)/meshes/base_link_collision.stl" />
+        <mesh filename="$(find robot_pkg)/meshes/base_link.stl" />
       </geometry>
     </collision>
   </link>
@@ -95,9 +95,9 @@
       </material> -->
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="-1.5707963267949 0 0" />
+      <origin xyz="0 0 0" rpy="3.141592654 0 0" />
       <geometry>
-        <mesh filename="$(find robot_pkg)/meshes/wheel_collision.stl" />
+        <mesh filename="$(find robot_pkg)/meshes/Right_wheel.stl" />
       </geometry>
     </collision>
   </link>
@@ -139,9 +139,9 @@
       </material> -->
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="-1.5707963267949 0 0" />
+      <origin xyz="0 0 0" rpy="3.141592654 0 0" />
       <geometry>
-        <mesh filename="$(find robot_pkg)/meshes/wheel_collision.stl" />
+        <mesh filename="$(find robot_pkg)/meshes/Left_wheel.stl" />
       </geometry>
     </collision>
   </link>
@@ -182,15 +182,15 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 ${caster_collision_xoff}" rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="1.5707963267949  0 0" />
       <geometry>
-        <mesh filename="$(find robot_pkg)/meshes/caster_collision.stl" />
+        <mesh filename="$(find robot_pkg)/meshes/FR_Caster.stl" />
       </geometry>
     </collision>
   </link>
 
   <joint name="FRC_joint" type="fixed">
-    <origin xyz="0.32 -0.1975 0.07" rpy="0 0 0" />
+    <origin xyz="0.32 -0.1975 ${caster_collision_xoff}" rpy="0 0 0" />
     <parent link="base_link" />
     <child link="FR_Caster" />
     <axis xyz="0 0 0" />
@@ -215,15 +215,15 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 ${caster_collision_xoff}" rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="1.5707963267949 0 0" />
       <geometry>
-        <mesh filename="$(find robot_pkg)/meshes/caster_collision.stl" />
+        <mesh filename="$(find robot_pkg)/meshes/FL_Caster.stl" />
       </geometry>
     </collision>
   </link>
 
   <joint name="FLC_joint" type="fixed">
-    <origin xyz="0.32 0.1975 0.07" rpy="0 0 0" />
+    <origin xyz="0.32 0.1975 ${caster_collision_xoff}" rpy="0 0 0" />
     <parent link="base_link" />
     <child link="FL_Caster" />
     <axis xyz="0 0 0" />
@@ -248,15 +248,15 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 ${caster_collision_xoff}" rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="1.5707963267949 0 0" />
       <geometry>
-        <mesh filename="$(find robot_pkg)/meshes/caster_collision.stl" />
+        <mesh filename="$(find robot_pkg)/meshes/RR_Caster.stl" />
       </geometry>
     </collision>
   </link>
 
   <joint name="RRC_joint" type="fixed">
-    <origin xyz="-0.32 -0.1975 0.07" rpy="0 0 0" />
+    <origin xyz="-0.32 -0.1975 ${caster_collision_xoff}" rpy="0 0 0" />
     <parent link="base_link" />
     <child link="RR_Caster" />
     <axis xyz="0 0 0" />
@@ -282,15 +282,15 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 ${caster_collision_xoff}" rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="1.5707963267949 0 0" />
       <geometry>
-        <mesh filename="$(find robot_pkg)/meshes/caster_collision.stl" />
+        <mesh filename="$(find robot_pkg)/meshes/RL_Caster.stl" />
       </geometry>
     </collision>
   </link>
 
   <joint name="RLC_joint" type="fixed">
-    <origin xyz="-0.32 0.1975 0.07" rpy="0 0 0" />
+    <origin xyz="-0.32 0.1975 ${caster_collision_xoff}" rpy="0 0 0" />
     <parent link="base_link" />
     <child link="RL_Caster" />
     <axis xyz="0 0 0" />

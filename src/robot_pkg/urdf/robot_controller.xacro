@@ -1,44 +1,44 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 	<gazebo reference="base_link">
-		<mu1>1</mu1>
-		<mu2>1</mu2>
+		<mu1>10</mu1>
+		<mu2>10</mu2>
 		<material>Gazebo/Blue</material>
 	</gazebo>
 
 	<gazebo reference="Right_wheel">
-		<mu1>100</mu1>
-		<mu2>100</mu2>
+		<mu1>10</mu1>
+		<mu2>10</mu2>
 		<material>Gazebo/Yellow</material>
 	</gazebo>
 
 	<gazebo reference="Left_wheel">
-		<mu1>100</mu1>
-		<mu2>100</mu2>
+		<mu1>10</mu1>
+		<mu2>10</mu2>
 		<material>Gazebo/Yellow</material>
 	</gazebo>
 
 	<gazebo reference="FR_Caster">
-		<mu1>0.00001</mu1>
-		<mu2>0.00001</mu2>
+		<mu1>0.1</mu1>
+		<mu2>0.1</mu2>
 		<material>Gazebo/Red</material>
 	</gazebo>
 
 	<gazebo reference="FL_Caster">
-		<mu1>0.00001</mu1>
-		<mu2>0.00001</mu2>
+		<mu1>0.1</mu1>
+		<mu2>0.1</mu2>
 		<material>Gazebo/Red</material>
 	</gazebo>
 
 	<gazebo reference="RR_Caster">
-		<mu1>0.00001</mu1>
-		<mu2>0.00001</mu2>
+		<mu1>0.1</mu1>
+		<mu2>0.1</mu2>
 		<material>Gazebo/Red</material>
 	</gazebo>
 
 	<gazebo reference="RL_Caster">
-		<mu1>0.00001</mu1>
-		<mu2>0.00001</mu2>
+		<mu1>0.1</mu1>
+		<mu2>0.1</mu2>
 		<material>Gazebo/Red</material>
 	</gazebo>
 

@@ -22,9 +22,6 @@ def generate_launch_description():
   #this is the absolute path to the world model
   pathWorldFile = os.path.join(get_package_share_directory('robot_pkg'),'worlds/hello.world')
 
-  # Load the URDF into a parameter
-  # urdf = open(default_urdf_model_path).read()
-
   #this is the launch file from the gazebo_ros package
   gazebo_rosPackageLaunch = PythonLaunchDescriptionSource([os.path.join(get_package_share_directory('gazebo_ros'),'launch'),'/gazebo.launch.py'])
 
@@ -41,16 +38,7 @@ def generate_launch_description():
     output='screen')
   
 
-  # Publish Robot Desciption in String form in the topic /robot_description
-  # publish_robot_description = Node(
-  #       package='robot_pkg',
-  #       executable='robot_description_publisher.py',
-  #       name='robot_description_publisher',
-  #       output='screen',
-  #       arguments=['-xml_string', xml,
-  #                  '-robot_description_topic', '/robot_description'
-  #                  ]
-  #   )
+
 
   # Subscribe to the joint states of the robot, and publish the 3D pose of each link.
   use_sim_time = LaunchConfiguration('use_sim_time', default='true')
@@ -68,7 +56,7 @@ def generate_launch_description():
  
   # Declare the launch options
   # Add gazeboLaunch
-  # ld.add_action(publish_robot_description)
+
   ld.add_action(start_robot_state_publisher_cmd)
   ld.add_action(gazeboLaunch)
   # Add any actions
