@@ -5,7 +5,7 @@
 	<!--                  ROBOT PARAMETERS        -->
 	<!-- ######################################################################### -->
   <!-- Position the wheels along the x-axis -->
-  <xacro:property name="wheel_xoff" value="0.075"/>
+  <xacro:property name="wheel_xoff" value="0.0795"/>
 
   <!-- Position the caster wheel (visual) along the x-axis --> 
   <xacro:property name="caster_xoff" value="0.08963"/>
@@ -46,12 +46,12 @@
 
   <link name="base_link">
     <inertial>
-      <origin xyz="0.0356231641912014 0.116102496743018 0" rpy="1.5707963267949 0 0" />
+      <origin xyz="0 0 0.1" rpy="1.570796327 0 0" />
       <mass value="14.2430877452663" />
       <inertia ixx="0.490511050948444" ixy="0" ixz="0" iyy="1.36650045731287" iyz="0" izz="0.971942301144948" />
     </inertial>
     <visual>
-      <origin xyz="0 0 0.045" rpy="0 0 0" />
+      <origin xyz="0 0 0.03" rpy="0 0 0" />
       <geometry>
         <mesh filename="$(find robot_pkg)/meshes/base_link.stl" />
       </geometry>
@@ -60,9 +60,9 @@
       </material> -->
     </visual>
     <collision>
-      <origin xyz ="0 0 0.045" rpy = "0 0 0" />
+      <origin xyz ="0 0 0.03" rpy = "0 0 3.141592654" />
       <geometry>
-        <mesh filename="$(find robot_pkg)/meshes/base_link.stl" />
+        <mesh filename="$(find robot_pkg)/meshes/base_link_collision.stl" />
       </geometry>
     </collision>
   </link>
@@ -81,12 +81,12 @@
 
   <link name="Right_wheel">
     <inertial>
-      <origin xyz="0 0.0225 1.0578E-05" rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="-1.570796327 0 0" />
       <mass value="0.49011" />
       <inertia ixx="0.00083492" ixy="0" ixz="0" iyy="0.001562" iyz="0" izz="0.00083497" />
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="3.141592654 0 0" />
+      <origin xyz="0 0.0225 0" rpy="3.141592654 0 0" />
       <geometry>
         <mesh filename="$(find robot_pkg)/meshes/Right_wheel.stl" />
       </geometry>
@@ -95,15 +95,15 @@
       </material> -->
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="3.141592654 0 0" />
+      <origin xyz="0 0.0225 0" rpy="-1.570796327 0 0" />
       <geometry>
-        <mesh filename="$(find robot_pkg)/meshes/Right_wheel.stl" />
+        <mesh filename="$(find robot_pkg)/meshes/wheel_collision.stl" />
       </geometry>
     </collision>
   </link>
 
   <joint name="RWheel_joint" type="continuous">
-    <origin xyz="0 -0.2215 ${wheel_xoff}" rpy="0 0 0" />
+    <origin xyz="0 -0.24413 ${wheel_xoff}" rpy="0 0 0" />
     <parent link="base_link" />
     <child link="Right_wheel" />
     <axis xyz="0 1 0" />
@@ -125,12 +125,12 @@
 
   <link name="Left_wheel">
     <inertial>
-      <origin xyz="-6.9389E-18 0.0225 1.0578E-05" rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="-1.570796327 0 0" />
       <mass value="0.49011" />
       <inertia ixx="0.00083492" ixy="0" ixz="0" iyy="0.001562" iyz="0" izz="0.00083497" />
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="3.141592654 0 0" />
+      <origin xyz="0 0.0225 0" rpy="3.141592654 0 0" />
       <geometry>
         <mesh filename="$(find robot_pkg)/meshes/Left_wheel.stl" />
       </geometry>
@@ -139,15 +139,15 @@
       </material> -->
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="3.141592654 0 0" />
+      <origin xyz="0 0.0225 0" rpy="-1.570796327 0 0" />
       <geometry>
-        <mesh filename="$(find robot_pkg)/meshes/Left_wheel.stl" />
+        <mesh filename="$(find robot_pkg)/meshes/wheel_collision.stl" />
       </geometry>
     </collision>
   </link>
 
   <joint name="LWheel_joint" type="continuous">
-    <origin xyz="0 0.2665 ${wheel_xoff}" rpy="0 0 0" />
+    <origin xyz="0 0.24413 ${wheel_xoff}" rpy="0 0 0" />
     <parent link="base_link" />
     <child link="Left_wheel" />
     <axis xyz="0 1 0" />
@@ -168,12 +168,12 @@
 	<!-- ######################################################################### -->
   <link name="FR_Caster">
     <inertial>
-      <origin xyz="-0.0033782 -0.032481 -1.3245E-09" rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="1.570796327 0 0" />
       <mass value="0.18385" />
       <inertia ixx="0.00019043" ixy="0" ixz="0" iyy="0.00013092" iyz="0" izz="0.00021915" />
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="1.5707963267949 0 0" />
+      <origin xyz="0 0 0" rpy="1.570796327 0 0" />
       <geometry>
         <mesh filename="$(find robot_pkg)/meshes/FR_Caster.stl" />
       </geometry>
@@ -182,7 +182,7 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="1.5707963267949  0 0" />
+      <origin xyz="0 0 0" rpy="1.570796327  0 0" />
       <geometry>
         <mesh filename="$(find robot_pkg)/meshes/FR_Caster.stl" />
       </geometry>
@@ -201,12 +201,12 @@
 
   <link name="FL_Caster">
     <inertial>
-      <origin xyz="-0.0033782 -0.032481 -1.3245E-09" rpy="1.5707963267949 0 0" />
+      <origin xyz="0 0 0" rpy="1.570796327 0 0" />
       <mass value="0.18385" />
       <inertia ixx="0.00019043" ixy="0" ixz="0" iyy="0.00013092" iyz="0" izz="0.00021915" />
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="1.5707963267949 0 0" />
+      <origin xyz="0 0 0" rpy="1.570796327 0 0" />
       <geometry>
         <mesh filename="$(find robot_pkg)/meshes/FL_Caster.stl" />
       </geometry>
@@ -215,7 +215,7 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="1.5707963267949 0 0" />
+      <origin xyz="0 0 0" rpy="1.570796327 0 0" />
       <geometry>
         <mesh filename="$(find robot_pkg)/meshes/FL_Caster.stl" />
       </geometry>
@@ -234,12 +234,12 @@
 
   <link name="RR_Caster">
     <inertial>
-      <origin xyz="-0.0033782 -0.032481 -1.3245E-09" rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="1.570796327 0 0" />
       <mass value="0.18385" />
       <inertia ixx="0.00019043" ixy="0" ixz="0" iyy="0.00013092" iyz="0" izz="0.00021915" />
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="1.5707963267949 0 0" />
+      <origin xyz="0 0 0" rpy="1.570796327 0 0" />
       <geometry>
         <mesh filename="$(find robot_pkg)/meshes/RR_Caster.stl" />
       </geometry>
@@ -248,7 +248,7 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="1.5707963267949 0 0" />
+      <origin xyz="0 0 0" rpy="1.570796327 0 0" />
       <geometry>
         <mesh filename="$(find robot_pkg)/meshes/RR_Caster.stl" />
       </geometry>
@@ -273,7 +273,7 @@
       <inertia ixx="0.00019043" ixy="0" ixz="0" iyy="0.00013092" iyz="0" izz="0.00021915" />
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="1.5707963267949 0 0" />
+      <origin xyz="0 0 0" rpy="1.570796327 0 0" />
       <geometry>
         <mesh filename="$(find robot_pkg)/meshes/RL_Caster.stl" />
       </geometry>
@@ -282,7 +282,7 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="1.5707963267949 0 0" />
+      <origin xyz="0 0 0" rpy="1.570796327 0 0" />
       <geometry>
         <mesh filename="$(find robot_pkg)/meshes/RL_Caster.stl" />
       </geometry>
