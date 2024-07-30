@@ -1,8 +1,8 @@
 import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription
-from launch.substitutions import LaunchConfiguration
+from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument
+from launch.substitutions import LaunchConfiguration, Command, PathJoinSubstitution
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
 import xacro
@@ -34,7 +34,7 @@ def generate_launch_description():
     package='gazebo_ros', 
     executable='spawn_entity.py',
     name ='spawn_entity',
-    arguments=['-entity', robotXacroName, '-topic', 'robot_description'],
+    arguments=['-entity', robotXacroName, '-topic', '/robot_description'],
     output='screen')
   
 
@@ -50,6 +50,17 @@ def generate_launch_description():
     parameters=[{'robot_description': xml,'use_sim_time': use_sim_time}],
     )
   
+  # RViz node to visualize the robot model
+  rviz_config_file = os.path.join(get_package_share_directory('robot_pkg'), 'rviz', 'rviz_basic_settings.rviz')
+  rviz_node = Node(
+        package='rviz2',
+        executable='rviz2',
+        name='rviz2',
+        output='screen',
+        arguments=['-d', rviz_config_file],
+        parameters=[{'use_sim_time': use_sim_time}]
+    )
+  
   
   # Create the launch description and populate
   ld = LaunchDescription()
@@ -61,4 +72,5 @@ def generate_launch_description():
   ld.add_action(gazeboLaunch)
   # Add any actions
   ld.add_action(spawnModeNode)
+  ld.add_action(rviz_node)
   return ld

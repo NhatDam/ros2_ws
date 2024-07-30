@@ -13,12 +13,15 @@
   <!-- Position the caster wheel (collision) along the x-axis -->
   <xacro:property name="caster_collision_xoff" value="0.08963"/>
 
+  <!-- The parameter for wheels setup-->
   <xacro:property name="wheel_dia" value="0.15"/>
   <xacro:property name="wheel_separate" value="0.48826"/>
 
+  <!-- Include the controller plugin for gazebo-->
+  <xacro:include filename="robot_controller.xacro" />
 
-  <xacro:include filename="$(find robot_pkg)/urdf/robot_controller.xacro" />
-
+  <!-- Define a property for the base path to meshes -->
+  <xacro:property name="mesh_base_path" value="package://robot_pkg/"/>
 
 
   <!-- ######################################################################### -->
@@ -53,7 +56,8 @@
     <visual>
       <origin xyz="0 0 0.03" rpy="0 0 0" />
       <geometry>
-        <mesh filename="$(find robot_pkg)/meshes/base_link.stl" />
+        <!-- <mesh filename="package://robot_pkg/meshes/base_link.stl" /> -->
+        <mesh filename="${mesh_base_path}/meshes/base_link.stl" />
       </geometry>
       <!-- <material name="">
         <color rgba="0.894117647058823 0.913725490196078 0.929411764705882 1" />
@@ -62,7 +66,8 @@
     <collision>
       <origin xyz ="0 0 0.03" rpy = "0 0 3.141592654" />
       <geometry>
-        <mesh filename="$(find robot_pkg)/meshes/base_link_collision.stl" />
+        <!-- <mesh filename="package://robot_pkg/meshes/base_link_collision.stl" /> -->
+        <mesh filename="${mesh_base_path}/meshes/base_link_collision.stl" />
       </geometry>
     </collision>
   </link>
@@ -88,7 +93,8 @@
     <visual>
       <origin xyz="0 0.0225 0" rpy="3.141592654 0 0" />
       <geometry>
-        <mesh filename="$(find robot_pkg)/meshes/Right_wheel.stl" />
+        <!-- <mesh filename="package://robot_pkg/meshes/Right_wheel.stl" /> -->
+        <mesh filename="${mesh_base_path}/meshes/Right_wheel.stl" />
       </geometry>
       <!-- <material name="">
         <color rgba="0.79216 0.81961 0.93333 1" />
@@ -97,7 +103,8 @@
     <collision>
       <origin xyz="0 0.0225 0" rpy="-1.570796327 0 0" />
       <geometry>
-        <mesh filename="$(find robot_pkg)/meshes/wheel_collision.stl" />
+        <!-- <mesh filename="package://robot_pkg/meshes/wheel_collision.stl" /> -->
+        <mesh filename="${mesh_base_path}/meshes/wheel_collision.stl" />
       </geometry>
     </collision>
   </link>
@@ -132,7 +139,8 @@
     <visual>
       <origin xyz="0 0.0225 0" rpy="3.141592654 0 0" />
       <geometry>
-        <mesh filename="$(find robot_pkg)/meshes/Left_wheel.stl" />
+        <!-- <mesh filename="package://robot_pkg/meshes/Left_wheel.stl" /> -->
+        <mesh filename="${mesh_base_path}/meshes/Left_wheel.stl" />
       </geometry>
       <!-- <material name="">
         <color rgba="0.79216 0.81961 0.93333 1" />
@@ -141,7 +149,8 @@
     <collision>
       <origin xyz="0 0.0225 0" rpy="-1.570796327 0 0" />
       <geometry>
-        <mesh filename="$(find robot_pkg)/meshes/wheel_collision.stl" />
+        <!-- <mesh filename="package://robot_pkg/meshes/wheel_collision.stl" /> -->
+        <mesh filename="${mesh_base_path}/meshes/wheel_collision.stl" />
       </geometry>
     </collision>
   </link>
@@ -175,7 +184,8 @@
     <visual>
       <origin xyz="0 0 0" rpy="1.570796327 0 0" />
       <geometry>
-        <mesh filename="$(find robot_pkg)/meshes/FR_Caster.stl" />
+        <!-- <mesh filename="package://robot_pkg/meshes/FR_Caster.stl" /> -->
+        <mesh filename="${mesh_base_path}/meshes/FR_Caster.stl" />
       </geometry>
       <material name="">
         <color rgba="0.79216 0.81961 0.93333 1" />
@@ -184,7 +194,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="1.570796327  0 0" />
       <geometry>
-        <mesh filename="$(find robot_pkg)/meshes/FR_Caster.stl" />
+        <!-- <mesh filename="package://robot_pkg/meshes/FR_Caster.stl" /> -->
+        <mesh filename="${mesh_base_path}/meshes/FR_Caster.stl" />
       </geometry>
     </collision>
   </link>
@@ -208,7 +219,8 @@
     <visual>
       <origin xyz="0 0 0" rpy="1.570796327 0 0" />
       <geometry>
-        <mesh filename="$(find robot_pkg)/meshes/FL_Caster.stl" />
+        <!-- <mesh filename="package://robot_pkg/meshes/FL_Caster.stl" /> -->
+        <mesh filename="${mesh_base_path}/meshes/FL_Caster.stl" />
       </geometry>
       <material name="">
         <color rgba="0.79216 0.81961 0.93333 1" />
@@ -217,7 +229,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="1.570796327 0 0" />
       <geometry>
-        <mesh filename="$(find robot_pkg)/meshes/FL_Caster.stl" />
+        <!-- <mesh filename="package://robot_pkg/meshes/FL_Caster.stl" /> -->
+        <mesh filename="${mesh_base_path}/meshes/FL_Caster.stl" />
       </geometry>
     </collision>
   </link>
@@ -241,7 +254,8 @@
     <visual>
       <origin xyz="0 0 0" rpy="1.570796327 0 0" />
       <geometry>
-        <mesh filename="$(find robot_pkg)/meshes/RR_Caster.stl" />
+        <!-- <mesh filename="package://robot_pkg/meshes/RR_Caster.stl" /> -->
+        <mesh filename="${mesh_base_path}/meshes/RR_Caster.stl" />
       </geometry>
       <material name="">
         <color rgba="0.79216 0.81961 0.93333 1" />
@@ -250,7 +264,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="1.570796327 0 0" />
       <geometry>
-        <mesh filename="$(find robot_pkg)/meshes/RR_Caster.stl" />
+        <!-- <mesh filename="package://robot_pkg/meshes/RR_Caster.stl" /> -->
+        <mesh filename="${mesh_base_path}/meshes/RR_Caster.stl" />
       </geometry>
     </collision>
   </link>
@@ -275,7 +290,8 @@
     <visual>
       <origin xyz="0 0 0" rpy="1.570796327 0 0" />
       <geometry>
-        <mesh filename="$(find robot_pkg)/meshes/RL_Caster.stl" />
+        <!-- <mesh filename="package://robot_pkg/meshes/RL_Caster.stl" /> -->
+        <mesh filename="${mesh_base_path}/meshes/RL_Caster.stl" />
       </geometry>
       <material name="">
         <color rgba="0.79216 0.81961 0.93333 1" />
@@ -284,7 +300,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="1.570796327 0 0" />
       <geometry>
-        <mesh filename="$(find robot_pkg)/meshes/RL_Caster.stl" />
+        <!-- <mesh filename="package://robot_pkg/meshes/RL_Caster.stl" /> -->
+        <mesh filename="${mesh_base_path}/meshes/RL_Caster.stl" />
       </geometry>
     </collision>
   </link>
@@ -298,5 +315,5 @@
 <!-- ######################################################################### -->
 <!--                 END: Caster wheel          -->
 <!-- ######################################################################### -->
-
+  
 </robot>
