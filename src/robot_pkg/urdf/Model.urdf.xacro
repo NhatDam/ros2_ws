@@ -56,12 +56,11 @@
     <visual>
       <origin xyz="0 0 0.03" rpy="0 0 0" />
       <geometry>
-        <!-- <mesh filename="package://robot_pkg/meshes/base_link.stl" /> -->
         <mesh filename="${mesh_base_path}/meshes/base_link.stl" />
       </geometry>
-      <!-- <material name="">
-        <color rgba="0.894117647058823 0.913725490196078 0.929411764705882 1" />
-      </material> -->
+      <material name="orange">
+        <color rgba="1.0 0.423529411765 0.0392156862745 1.0"/>
+      </material>
     </visual>
     <collision>
       <origin xyz ="0 0 0.03" rpy = "0 0 3.141592654" />
@@ -96,9 +95,9 @@
         <!-- <mesh filename="package://robot_pkg/meshes/Right_wheel.stl" /> -->
         <mesh filename="${mesh_base_path}/meshes/Right_wheel.stl" />
       </geometry>
-      <!-- <material name="">
-        <color rgba="0.79216 0.81961 0.93333 1" />
-      </material> -->
+      <material name="gray">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+      </material>
     </visual>
     <collision>
       <origin xyz="0 0.0225 0" rpy="-1.570796327 0 0" />
@@ -142,9 +141,9 @@
         <!-- <mesh filename="package://robot_pkg/meshes/Left_wheel.stl" /> -->
         <mesh filename="${mesh_base_path}/meshes/Left_wheel.stl" />
       </geometry>
-      <!-- <material name="">
-        <color rgba="0.79216 0.81961 0.93333 1" />
-      </material> -->
+      <material name="gray">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+      </material>
     </visual>
     <collision>
       <origin xyz="0 0.0225 0" rpy="-1.570796327 0 0" />
